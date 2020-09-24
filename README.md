@@ -9,5 +9,8 @@ Features:
 - Player controller.
 - Raycast shooting mechanics.
 - Collisions.
+- Reload system.
+- Player and Enemmie health bars.
+- Portals (currently not working, idk why).
 
 ![Portal-Game](https://i.imgur.com/A1LaK1r.png)

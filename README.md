@@ -1,4 +1,4 @@
-# Portal-Test
+# Rocket Travellers (Portal Test)
 A Unity-based first-person shooter videogame with raycast and portals.
 
 # Overview

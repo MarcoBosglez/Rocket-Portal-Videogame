@@ -1,5 +1,5 @@
 # Rocket Travellers (Portal Test)
-A Unity-based first-person shooter videogame with raycast and portals.
+A Unity-based fps videogame with rockets and portals.
 
 # Overview
 Portal-Game is a 3D unity test game where your character can go through portals, navigate the platform and shoot rockets at enemies.

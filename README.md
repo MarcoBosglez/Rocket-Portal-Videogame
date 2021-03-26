@@ -2,8 +2,8 @@
 A Unity-based fps videogame with rockets and portals.
 
 # Overview
-Portal-Game is a 3D unity test game where your character can go through portals, navigate the platform and shoot rockets at enemies.
-**This is a personal project of mine which is currently a Work In Progress (WIP).**
+RocketPortal-Game is a 3D unity game where your character can go through portals, navigate the platform and shoot rockets at enemies.
+**This is a personal project of mine which is currently a Work In Progress.**
 
 Features:
 - Implemented Field Of View (FOV).

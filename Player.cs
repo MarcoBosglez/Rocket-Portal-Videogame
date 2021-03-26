@@ -1,24 +1,28 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //------------------------------------------------------------MOVEMENT--------------------------------------------------
     public CharacterController controller;
 
-    public float speed = 12f;
+    [Header("Movement")]
+    public float speed = 20f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
+    Vector3 impactVector = Vector3.zero;
+
+    [Header("Ground")]
     public Transform GroundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public bool isGrounded;
 
-    Vector3 velocity;
-    bool isGrounded;
+    private Vector3 velocity;
 
-    //--------------------------------------------------------------HEALTH--------------------------------------------------
+    // Health
+    [Header("Health")]
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
@@ -31,12 +35,14 @@ public class Player : MonoBehaviour
     
     void Update()
     {
+        if (!isGrounded)
+            impactVector = Vector3.zero;
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             TakeDamage(20);
         }
 
-   
         isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
@@ -53,14 +59,11 @@ public class Player : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
-            
-            speed = 20f;
+            speed = 12f;
         }
-
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            
-            speed = 12f;
+            speed = 20f;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -69,10 +72,8 @@ public class Player : MonoBehaviour
         }
 
         velocity.y += gravity * Time.deltaTime;
-
         controller.Move(velocity * Time.deltaTime);
     }
-
 
     void TakeDamage(int damage)
     {
@@ -83,5 +84,13 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void AddImpact(float impactForce, Vector3 direction)
+    {
+        float mass = 1f;
+        impactVector *= impactForce * Mathf.Sin(Vector3.Angle(transform.up, direction)) / (0.5f * mass);
+        velocity.y += impactForce / mass;
+        
     }
 }

@@ -1,10 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    public float health = 50f;
+    public float health = 100f;
 
     public void TakeDamage(float amount)
     {
@@ -15,9 +15,8 @@ public class Enemies : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

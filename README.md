@@ -1,4 +1,4 @@
-# Rocket Travellers (Portal Test)
+# Rocket-Portal
 A Unity-based fps videogame with rockets and portals.
 
 # Overview

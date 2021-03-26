@@ -13,7 +13,7 @@ Features:
 - (NEW) Rocket Jumping
 - Collisions.
 - Reload system.
-- Player and Enemmy health bars.
+- Healthbars for both enemies and the player
 - (UPDATED) Portals.
 
 ![Portal-Game](https://i.imgur.com/A1LaK1r.png)

@@ -14,7 +14,7 @@ Features:
 - Collisions.
 - Reload system.
 - Healthbars for both enemies and the player
-- (UPDATED) Portals.
+- Portals.
 
 ![Rocket-Portal1](https://i.imgur.com/A1LaK1r.png)
 ![Rocket-Portal2](https://i.imgur.com/yyFxtLc.png)
